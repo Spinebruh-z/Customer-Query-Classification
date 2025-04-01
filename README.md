@@ -42,25 +42,80 @@ The project evaluates the effectiveness of both models independently and integra
 - **XGBoost** – A gradient boosting algorithm used for high-performance classification.
 - **LSTM (Long Short-Term Memory)** – A deep learning model capable of capturing sequential dependencies in text data.
 - **Ensemble Approach** – Combines XGBoost and LSTM results through a voting mechanism to improve accuracy.
+- 
+## Model Performance Summary
 
-## Comparative Analysis
-| Category              | Precision (%) | Recall (%) | F1-Score (%) |
-|----------------------|---------------|------------|--------------|
-| ACCOUNT              | 98            | 100        | 99           |
-| CANCELLATION_FEE     | 100           | 96         | 98           |
-| CONTACT              | 100           | 100        | 100          |
-| DELIVERY             | 100           | 100        | 100          |
-| FEEDBACK             | 100           | 100        | 100          |
-| INVOICE              | 100           | 100        | 100          |
-| NEWSLETTER           | 100           | 91         | 95           |
-| ORDER                | 100           | 100        | 100          |
-| PAYMENT              | 100           | 100        | 100          |
-| REFUND               | 100           | 99         | 99           |
-| SHIPPING_ADDRESS     | 100           | 100        | 100          |
-| **Overall Accuracy**  | **100**       | **99**     | **99**       |
+| Model       | Accuracy  |
+|------------|----------|
+| CNN        | 0.958264 |
+| LSTM       | 0.190317 |
+| CNN-BiLSTM | 0.971619 |
 
+---
+
+## CNN Model Performance
+
+**Accuracy:** 0.9582637729549248
+
+### Classification Report
+```
+                   precision    recall  f1-score   support
+
+         ACCOUNT       0.84      0.99      0.91       124
+        DELIVERY       1.00      0.96      0.98       114
+           ORDER       0.98      0.90      0.94       118
+          REFUND       1.00      0.94      0.97       118
+SHIPPING_ADDRESS       1.00      1.00      1.00       125
+
+        accuracy                           0.96       599
+       macro avg       0.96      0.96      0.96       599
+    weighted avg       0.96      0.96      0.96       599
+```
+
+---
+
+## LSTM Model Performance
+
+**Accuracy:** 0.19031719532554256
+
+### Classification Report
+```
+                   precision    recall  f1-score   support
+
+         ACCOUNT       0.19      0.27      0.22       124
+        DELIVERY       0.00      0.00      0.00       114
+           ORDER       0.14      0.08      0.11       118
+          REFUND       0.18      0.22      0.20       118
+SHIPPING_ADDRESS       0.21      0.36      0.27       125
+
+        accuracy                           0.19       599
+       macro avg       0.15      0.19      0.16       599
+    weighted avg       0.15      0.19      0.16       599
+```
+**Note:** Warnings indicate that some labels have no predicted samples, leading to ill-defined precision values.
+
+---
+
+## CNN-BiLSTM Model Performance
+
+**Accuracy:** 0.9716193656093489
+
+### Classification Report
+```
+                   precision    recall  f1-score   support
+
+         ACCOUNT       0.96      1.00      0.98       124
+        DELIVERY       1.00      0.97      0.99       114
+           ORDER       0.91      0.97      0.94       118
+          REFUND       1.00      0.91      0.95       118
+SHIPPING_ADDRESS       1.00      1.00      1.00       125
+
+        accuracy                           0.97       599
+       macro avg       0.97      0.97      0.97       599
+    weighted avg       0.97      0.97      0.97       599
+```
 ## Conclusion
-This Customer Query Classification project demonstrates how Natural Language Processing (NLP), Machine Learning (ML), and Deep Learning (DL) can be leveraged to automate text classification. The ensemble approach combining XGBoost and LSTM significantly enhances the accuracy of classification compared to using individual models.
+From the results, the CNN-BiLSTM model performs the best with **97.16% accuracy**, followed closely by the CNN model with **95.83% accuracy**. The LSTM model performed poorly, achieving only **19.03% accuracy**.
 
 **Key takeaways from the project:**
 - LSTM effectively captures the sequential patterns in text, improving classification accuracy.
@@ -69,3 +124,14 @@ This Customer Query Classification project demonstrates how Natural Language Pro
 - The Streamlit web application enables real-time classification, making it easy to use in practical customer support systems.
 
 This project highlights the potential of NLP in automating customer support workflows, optimizing response times, and improving customer service operations.
+
+### Recommendations
+- **Use CNN-BiLSTM** for the best performance.
+- **Avoid LSTM standalone** as it fails to generalize well in this task.
+- Consider further hyperparameter tuning or additional data augmentation techniques to improve model performance.
+
+---
+
+**Author:** Aniket Kumar Saini, Sarthak Suryakant Satam, Sahil Shivaji Salunkhe, Pratik Pandurang Pawar
+
+
