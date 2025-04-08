@@ -125,27 +125,28 @@ The project evaluates the effectiveness of both models independently and integra
 
 ### Transformer Models Performance
 
-#### BERT (Accuracy: 99.83%, MCC: 0.9979, Eval Loss: 0.0156)
-| Class | Precision | Recall | F1-score |
-|-------|-----------|--------|----------|
-| ACCOUNT | 1.00 | 1.00 | 1.00 |
-| DELIVERY | 1.00 | 0.99 | 1.00 |
-| ORDER | 0.99 | 1.00 | 1.00 |
-| REFUND | 1.00 | 1.00 | 1.00 |
-| SHIPPING_ADDRESS | 1.00 | 1.00 | 1.00 |
-| **Macro Avg** | **1.00** | **1.00** | **1.00** |
-| **Weighted Avg** | **1.00** | **1.00** | **1.00** |
+#### BERT (Accuracy: 94.82%, MCC: 0.9355, Eval Loss: 0.3250)
+| Class            | Precision | Recall | F1-score |
+|------------------|-----------|--------|----------|
+| ACCOUNT          | 0.88      | 0.93   | 0.90     |
+| DELIVERY         | 0.99      | 0.94   | 0.97     |
+| ORDER            | 0.89      | 0.89   | 0.89     |
+| REFUND           | 0.99      | 0.98   | 0.99     |
+| SHIPPING_ADDRESS | 1.00      | 0.99   | 1.00     |
+| **Macro Avg**    | **0.95**  | **0.95** | **0.95** |
+| **Weighted Avg** | **0.95**  | **0.95** | **0.95** |
 
-#### RoBERTa (Accuracy: 99.83%, MCC: 0.9979, Eval Loss: 0.0148)
-| Class | Precision | Recall | F1-score |
-|-------|-----------|--------|----------|
-| ACCOUNT | 1.00 | 1.00 | 1.00 |
-| DELIVERY | 1.00 | 0.99 | 1.00 |
-| ORDER | 0.99 | 1.00 | 1.00 |
-| REFUND | 1.00 | 1.00 | 1.00 |
-| SHIPPING_ADDRESS | 1.00 | 1.00 | 1.00 |
-| **Macro Avg** | **1.00** | **1.00** | **1.00** |
-| **Weighted Avg** | **1.00** | **1.00** | **1.00** |
+#### RoBERTa (Accuracy: 98.16%, MCC: 0.9772, Eval Loss: 0.0854)
+| Class            | Precision | Recall | F1-score |
+|------------------|-----------|--------|----------|
+| ACCOUNT          | 0.94      | 0.99   | 0.96     |
+| DELIVERY         | 0.99      | 0.99   | 0.99     |
+| ORDER            | 0.98      | 0.94   | 0.96     |
+| REFUND           | 1.00      | 0.99   | 1.00     |
+| SHIPPING_ADDRESS | 1.00      | 0.99   | 1.00     |
+| **Macro Avg**    | **0.98**  | **0.98** | **0.98** |
+| **Weighted Avg** | **0.98**  | **0.98** | **0.98** |
+
 
 ## Key Findings
 
